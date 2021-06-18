@@ -32,7 +32,7 @@ data class FlutterFetchCognitoAuthSessionResult(private val raw: AWSCognitoAuthS
   private val tokens: AuthSessionResult<AWSCognitoUserPoolTokens>? = raw.userPoolTokens
 
   fun toValueMap(): Map<String, Any?> {
-    return mapOf(
+    return mutableMapOf<String, Any?>(
       "isSignedIn" to this.isSignedIn,
       "identityId" to this.identityId,
       "userSub" to this.userSub,
